@@ -53,15 +53,20 @@
     NSArray * items;
     WCItem * item;
     UITableViewCell * cell =[tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
- 
+    NSLog(@"indexpath.section is %d", indexPath.section);
     switch (indexPath.section) {
         case 0:
+            NSLog(@"indexpath.row is %d", indexPath.row);
             items = [[WCItemStore sharedStore] itemsWithLessThanOrEqualValue:50];
+            if(indexPath.row < [items count])
             item = items[indexPath.row];
+            {
             cell.textLabel.text = item.itemName;
             cell.detailTextLabel.text = [item description];
+            }
             break;
         case 1:
+            NSLog(@"indexpath.row is %d", indexPath.row);
             items = [[WCItemStore sharedStore] itemsWithLessThanOrEqualValue:50];
             item = items[indexPath.row];
             cell.textLabel.text = item.itemName;
