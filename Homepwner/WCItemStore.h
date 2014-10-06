@@ -16,5 +16,7 @@
 -(WCItem *) createItem;
 -(NSArray *) itemsWithMoreThanValue : (int) value;
 -(NSArray *) itemsWithLessThanOrEqualValue : (int) value;
+-(void) removeItem :(WCItem *) item;
+-(void) moveItemAtIndex :(NSUInteger) fromIndex toIndex:(NSUInteger) toIndex;
 
 @end

@@ -72,4 +72,21 @@
     NSArray * newArray =[self.privateItems filteredArrayUsingPredicate:valuePredicate];
     return newArray;
 }
+
+-(void) removeItem :(WCItem *) item
+{
+    [self.privateItems removeObjectIdenticalTo:item];
+}
+
+-(void) moveItemAtIndex :(NSUInteger) fromIndex toIndex:(NSUInteger) toIndex;
+{
+    if(fromIndex == toIndex)
+    {
+        return;
+    }
+    
+    WCItem *item = self.privateItems[fromIndex];
+    [self.privateItems removeObjectIdenticalTo:item];
+    [self.privateItems insertObject:item atIndex:toIndex];
+}
 @end

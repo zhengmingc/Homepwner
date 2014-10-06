@@ -15,11 +15,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor grayColor];
     [self.window makeKeyAndVisible];
     
     WCItemsViewController * vc = [[WCItemsViewController alloc] init];
-    [self.window setRootViewController:vc];
+    UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self.window setRootViewController:nc];
     return YES;
 }
 
